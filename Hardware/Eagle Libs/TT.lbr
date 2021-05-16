@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE eagle SYSTEM "eagle.dtd">
+<eagle>
+    <drawing>
+        <grid unitdist="mm" unit="mm"/>
+        <layers>
+            <layer name="Top" color="4" number="1" visible="yes" active="yes" fill="1"/>
+            <layer name="Bottom" color="4" number="16" visible="yes" active="yes" fill="1"/>
+            <layer name="tPlace" color="7" number="21" visible="yes" active="yes" fill="1"/>
+            <layer name="bPlace" color="7" number="22" visible="yes" active="yes" fill="1"/>
+            <layer name="tNames" color="7" number="25" visible="yes" active="yes" fill="1"/>
+            <layer name="bNames" color="7" number="26" visible="yes" active="yes" fill="1"/>
+            <layer name="tValues" color="7" number="27" visible="yes" active="yes" fill="1"/>
+            <layer name="bValues" color="7" number="28" visible="yes" active="yes" fill="1"/>
+            <layer name="tStop" color="7" number="29" visible="yes" active="yes" fill="1"/>
+            <layer name="bStop" color="7" number="30" visible="yes" active="yes" fill="1"/>
+            <layer name="tCream" color="7" number="31" visible="yes" active="yes" fill="1"/>
+            <layer name="bCream" color="7" number="32" visible="yes" active="yes" fill="1"/>
+            <layer name="tKeepout" color="4" number="39" visible="yes" active="yes" fill="1"/>
+            <layer name="bKeepout" color="4" number="40" visible="yes" active="yes" fill="1"/>
+            <layer name="tRestrict" color="0" number="41" visible="yes" active="yes" fill="1"/>
+            <layer name="bRestrict" color="0" number="42" visible="yes" active="yes" fill="1"/>
+            <layer name="tDocu" color="7" number="51" visible="yes" active="yes" fill="1"/>
+            <layer name="bDocu" color="7" number="52" visible="yes" active="yes" fill="1"/>
+            <layer name="Nets" color="2" number="91" visible="yes" active="yes" fill="1"/>
+            <layer name="Busses" color="1" number="92" visible="yes" active="yes" fill="1"/>
+            <layer name="Pins" color="2" number="93" visible="yes" active="yes" fill="1"/>
+            <layer name="Symbols" color="4" number="94" visible="yes" active="yes" fill="1"/>
+            <layer name="Names" color="7" number="95" visible="yes" active="yes" fill="1"/>
+            <layer name="Values" color="7" number="96" visible="yes" active="yes" fill="1"/>
+            <layer name="Info" color="7" number="97" visible="yes" active="yes" fill="1"/>
+            <layer name="Guide" color="6" number="98" visible="yes" active="yes" fill="1"/>
+        </layers>
+        <library name="Upverter Library">
+            <description>Upverter Parts Library
+
+Created by Upverter.com</description>
+            <packages>
+                <package name="MICROCHIP_MCP1700T-3302E-TT_0">
+                    <description>PM-LINEREG-MCP1700-IL3</description>
+                    <wire layer="21" y2="-0.7" width="0.15" x2="0.7" y1="-1.55" x1="0.7"/>
+                    <wire layer="21" y2="-1.55" width="0.15" x2="0.7" y1="-1.55" x1="0.1"/>
+                    <wire layer="21" y2="1.55" width="0.15" x2="0.7" y1="0.7" x1="0.7"/>
+                    <wire layer="21" y2="1.55" width="0.15" x2="0.7" y1="1.55" x1="0.1"/>
+                    <wire layer="51" y2="-1.525" width="0.1" x2="0.7" y1="-1.525" x1="-0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="0.7" y1="1.525" x1="-0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="0.7" y1="-1.525" x1="0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="-0.7" y1="-1.525" x1="-0.7"/>
+                    <wire layer="39" y2="1.65" width="0.1" x2="-1.6" y1="-1.65" x1="-1.6"/>
+                    <wire layer="39" y2="1.65" width="0.1" x2="1.6" y1="1.65" x1="-1.6"/>
+                    <wire layer="39" y2="-1.65" width="0.1" x2="1.6" y1="1.65" x1="1.6"/>
+                    <wire layer="39" y2="-1.65" width="0.1" x2="-1.6" y1="-1.65" x1="1.6"/>
+                    <text layer="25" align="bottom-left" y="1.925" x="-2.6" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="1.8" x="-0.9" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.6" dy="1.2" y="0.0" x="0.9" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.6" dy="1.2" y="-0.95" x="-0.9" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.6" dy="1.2" y="0.95" x="-0.9" rot="R90" cream="yes"/>
+                </package>
+                <package name="MICROCHIP_MCP1700T-3302E-TT_1">
+                    <description>PM-LINEREG-MCP1700-IL3</description>
+                    <wire layer="21" y2="-0.7" width="0.15" x2="0.7" y1="-1.55" x1="0.7"/>
+                    <wire layer="21" y2="-1.55" width="0.15" x2="0.7" y1="-1.55" x1="0.2"/>
+                    <wire layer="21" y2="1.55" width="0.15" x2="0.7" y1="0.7" x1="0.7"/>
+                    <wire layer="21" y2="1.55" width="0.15" x2="0.7" y1="1.55" x1="0.2"/>
+                    <wire layer="51" y2="-1.525" width="0.1" x2="0.7" y1="-1.525" x1="-0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="0.7" y1="1.525" x1="-0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="0.7" y1="-1.525" x1="0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="-0.7" y1="-1.525" x1="-0.7"/>
+                    <wire layer="39" y2="1.8" width="0.1" x2="-1.95" y1="-1.8" x1="-1.95"/>
+                    <wire layer="39" y2="1.8" width="0.1" x2="1.95" y1="1.8" x1="-1.95"/>
+                    <wire layer="39" y2="-1.8" width="0.1" x2="1.95" y1="1.8" x1="1.95"/>
+                    <wire layer="39" y2="-1.8" width="0.1" x2="-1.95" y1="-1.8" x1="1.95"/>
+                    <text layer="25" align="bottom-left" y="1.925" x="-2.95" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="1.8" x="-0.95" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.6" dy="1.5" y="0.0" x="0.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.6" dy="1.5" y="-0.95" x="-0.95" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.6" dy="1.5" y="0.95" x="-0.95" rot="R90" cream="yes"/>
+                </package>
+                <package name="MICROCHIP_MCP1700T-3302E-TT_2">
+                    <description>PM-LINEREG-MCP1700-IL3</description>
+                    <wire layer="21" y2="-0.7" width="0.15" x2="0.7" y1="-1.55" x1="0.7"/>
+                    <wire layer="21" y2="-1.55" width="0.15" x2="0.7" y1="-1.55" x1="0.3"/>
+                    <wire layer="21" y2="1.55" width="0.15" x2="0.7" y1="0.7" x1="0.7"/>
+                    <wire layer="21" y2="1.55" width="0.15" x2="0.7" y1="1.55" x1="0.3"/>
+                    <wire layer="51" y2="-1.525" width="0.1" x2="0.7" y1="-1.525" x1="-0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="0.7" y1="1.525" x1="-0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="0.7" y1="-1.525" x1="0.7"/>
+                    <wire layer="51" y2="1.525" width="0.1" x2="-0.7" y1="-1.525" x1="-0.7"/>
+                    <wire layer="39" y2="2.05" width="0.1" x2="-2.4" y1="-2.05" x1="-2.4"/>
+                    <wire layer="39" y2="2.05" width="0.1" x2="2.4" y1="2.05" x1="-2.4"/>
+                    <wire layer="39" y2="-2.05" width="0.1" x2="2.4" y1="2.05" x1="2.4"/>
+                    <wire layer="39" y2="-2.05" width="0.1" x2="-2.4" y1="-2.05" x1="2.4"/>
+                    <text layer="25" align="bottom-left" y="2.05" x="-3.4" rot="R0" size="1.0">&gt;NAME</text>
+                    <circle y="1.8" x="-1.0" layer="21" radius="0.125" width="0.25"/>
+                    <smd layer="1" thermals="yes" name="3" stop="yes" roundness="0" dx="0.6" dy="1.8" y="0.0" x="1.0" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="2" stop="yes" roundness="0" dx="0.6" dy="1.8" y="-0.95" x="-1.0" rot="R90" cream="yes"/>
+                    <smd layer="1" thermals="yes" name="1" stop="yes" roundness="0" dx="0.6" dy="1.8" y="0.95" x="-1.0" rot="R90" cream="yes"/>
+                </package>
+            </packages>
+            <symbols>
+                <symbol name="MICROCHIP_MCP1700T-3302E-TT_0_0">
+                    <description>PM-LINEREG-MCP1700-IL3</description>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="0.0" y1="-15.24" x1="0.0"/>
+                    <wire layer="94" y2="-5.08" width="0.508" x2="15.24" y1="-5.08" x1="0.0"/>
+                    <wire layer="94" y2="-15.24" width="0.508" x2="15.24" y1="-5.08" x1="15.24"/>
+                    <wire layer="94" y2="-15.24" width="0.508" x2="0.0" y1="-15.24" x1="15.24"/>
+                    <wire layer="94" y2="-12.7" width="0.15" x2="15.24" y1="-12.7" x1="15.24"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="15.24" y1="-7.62" x1="15.24"/>
+                    <wire layer="94" y2="-7.62" width="0.15" x2="0.0" y1="-7.62" x1="0.0"/>
+                    <text layer="95" align="top-left" y="-2.54" x="0.0" rot="R0" size="2.54">&gt;NAME</text>
+                    <text layer="95" align="top-left" y="-20.32" x="0.0" rot="R0" size="2.54">MCP1700T-3302E/TT</text>
+                    <pin direction="pwr" name="GND" visible="both" length="middle" y="-12.7" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="VOUT" visible="both" length="middle" y="-7.62" x="20.32" rot="R180"/>
+                    <pin direction="pwr" name="VIN" visible="both" length="middle" y="-7.62" x="-5.08"/>
+                </symbol>
+            </symbols>
+            <devicesets>
+                <deviceset prefix="U" name="MICROCHIP_MCP1700T-3302E-TT">
+                    <description>PM-LINEREG-MCP1700-IL3</description>
+                    <gates>
+                        <gate name="G$0" symbol="MICROCHIP_MCP1700T-3302E-TT_0_0" x="0"/>
+                    </gates>
+                    <devices>
+                        <device name="MICROCHIP_MCP1700T-3302E-TT_0_0" package="MICROCHIP_MCP1700T-3302E-TT_0">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="GND"/>
+                                <connect gate="G$0" pad="2" pin="VOUT"/>
+                                <connect gate="G$0" pad="3" pin="VIN"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="Code__IPC" value="SOT23-3"/>
+                                    <attribute name="ciiva_ids" value="1493168"/>
+                                    <attribute name="Package_Version" value="revBB, Aug-2009"/>
+                                    <attribute name="vault_guid" value="FC249BAA-482B-455F-891A-041333026DEA"/>
+                                    <attribute name="release_date" value="1300337874"/>
+                                    <attribute name="vault_revision" value="0277CE2B-AC06-49C2-8AC0-2EBE9F51AB5A"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521863263"/>
+                                    <attribute name="Datasheet_Version" value="revB, Feb-2007"/>
+                                    <attribute name="Package_Description" value="3-Lead Plastic Small Outline Transistor (TT) [SOT-23]"/>
+                                    <attribute name="MPN" value="MCP1700T-3302E/TT"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="MF" value="Microchip"/>
+                                    <attribute name="package" value="SOT-23-TT3"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="MICROCHIP_MCP1700T-3302E-TT_0_1" package="MICROCHIP_MCP1700T-3302E-TT_1">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="GND"/>
+                                <connect gate="G$0" pad="2" pin="VOUT"/>
+                                <connect gate="G$0" pad="3" pin="VIN"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="Code__IPC" value="SOT23-3"/>
+                                    <attribute name="ciiva_ids" value="1493168"/>
+                                    <attribute name="Package_Version" value="revBB, Aug-2009"/>
+                                    <attribute name="vault_guid" value="FC249BAA-482B-455F-891A-041333026DEA"/>
+                                    <attribute name="release_date" value="1300337874"/>
+                                    <attribute name="vault_revision" value="0277CE2B-AC06-49C2-8AC0-2EBE9F51AB5A"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521863263"/>
+                                    <attribute name="Datasheet_Version" value="revB, Feb-2007"/>
+                                    <attribute name="Package_Description" value="3-Lead Plastic Small Outline Transistor (TT) [SOT-23]"/>
+                                    <attribute name="MPN" value="MCP1700T-3302E/TT"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="MF" value="Microchip"/>
+                                    <attribute name="package" value="SOT-23-TT3"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                        <device name="MICROCHIP_MCP1700T-3302E-TT_0_2" package="MICROCHIP_MCP1700T-3302E-TT_2">
+                            <connects>
+                                <connect gate="G$0" pad="1" pin="GND"/>
+                                <connect gate="G$0" pad="2" pin="VOUT"/>
+                                <connect gate="G$0" pad="3" pin="VIN"/>
+                            </connects>
+                            <technologies>
+                                <technology>
+                                    <attribute name="Code__IPC" value="SOT23-3"/>
+                                    <attribute name="ciiva_ids" value="1493168"/>
+                                    <attribute name="Package_Version" value="revBB, Aug-2009"/>
+                                    <attribute name="vault_guid" value="FC249BAA-482B-455F-891A-041333026DEA"/>
+                                    <attribute name="release_date" value="1300337874"/>
+                                    <attribute name="vault_revision" value="0277CE2B-AC06-49C2-8AC0-2EBE9F51AB5A"/>
+                                    <attribute name="imported" value="yes"/>
+                                    <attribute name="prefix" value="U"/>
+                                    <attribute name="import_ts" value="1521863263"/>
+                                    <attribute name="Datasheet_Version" value="revB, Feb-2007"/>
+                                    <attribute name="Package_Description" value="3-Lead Plastic Small Outline Transistor (TT) [SOT-23]"/>
+                                    <attribute name="MPN" value="MCP1700T-3302E/TT"/>
+                                    <attribute name="footprint_variant_name_0" value="Level C"/>
+                                    <attribute name="footprint_variant_name_1" value="Level B"/>
+                                    <attribute name="footprint_variant_name_2" value="Level A"/>
+                                    <attribute name="imported_from" value="vault"/>
+                                    <attribute name="MF" value="Microchip"/>
+                                    <attribute name="package" value="SOT-23-TT3"/>
+                                </technology>
+                            </technologies>
+                        </device>
+                    </devices>
+                </deviceset>
+            </devicesets>
+        </library>
+    </drawing>
+</eagle>
