@@ -1,9 +1,9 @@
 # BasicTracker
 Light weight long run time cheap tracker
 
-#Hardware
+# Hardware
 
-##Power
+## Power
 Single AA or AAA cell, 0.8v to 1.6v input range - TPS61200 to boost to 1.8v or 3.3v
 
 Solar Panel, 0.5v to 4.2v input range - either connect direct or use TPS61200 to boost or limit or MCP1700T to limit to 1.8v or 3.3v
@@ -17,25 +17,25 @@ Single Lithium, 2.8v to 4.2v useful input range, needs Battery Protection on Lip
 Single Lithium and Solar Panel, Solar Panel needs TPS61200 to stop lithium discharging through it and buck/boost voltage to max 4.2v for Lithium charging.  Lithium needs Battery Protection to limit min discharge voltage. Lithium will likley freeze at night, uncertain behaviour when Solar is trying to charge battery and power transmitter.
 
 
-###Boost Converter
+### Boost Converter
 Boost converter to 1.8v with 3.3v and 4.2v (for lithium charge) option
 
 Step ups in stock with JLC:
 L6920DBTR - $1.40 RP Protect, Min startup for 3.3vout@40mA = 0.72v
 TPS61220DCKR - $0.49 Min startup for 3.3vout@40mA = 0.7v
 TLV61220DBVR - $0.26. Min startup for 3.3vout@40mA = 0.7v
-* TPS61200DRC - $0.85.  Min startup for 3.3vout@40mA = 0.4v, max 150mA at 0.7in
+*TPS61200DRC - $0.85.  Min startup for 3.3vout@40mA = 0.4v, max 150mA at 0.7in*
 
-####Inductor
-* SMD_Murata-Electronics-1227AS-H-2R2M-P2_C435389
+#### Inductor
+*SMD_Murata-Electronics-1227AS-H-2R2M-P2_C435389*
 
 
 
-###Voltage Measuring
+### Voltage Measuring
 Measure Battery, Solar and Lithium voltages
 
  
-##GPS Module
+## GPS Module
 Ublox Max M8C / M7C to get 1.8v operation and power saving.
 Cheap ATGM336N would have been nice as low price, but needs 3v plus.
 Quectel L70 is cheap and great performance but only 3.3v
@@ -45,14 +45,14 @@ Connected I2C, PPS, Battery Backup etc
 Battery backup via resistor, capacitor and diode
 Antenna Options - Chip, Wire, static leak resister
 
-###GPS Power Switch
-* SIP32431DR3-T1GE3
+### GPS Power Switch
+*SIP32431DR3-T1GE3 - instock in JLC*
 
-###GPS Filtering
-* MuRata_BLM15HD102SN1D_1kR-25-at100MHz-250mA_C21516
+### GPS Filtering
+*MuRata_BLM15HD102SN1D_1kR-25-at100MHz-250mA_C21516*
  
  
-##Processor
+## Processor
 ATMega1284 - In stock in JLC, 10mmx10mm, 128kb of storage, 16kb of ram
 	Step up from 328 but still same family
 	JTAG interface not one wire debug.
@@ -66,11 +66,11 @@ Move to a ATSAMD21G18A-AU or similar?  Still arduinio compatible but so much mor
 STM xx?
 Ideally would get a USB Interface, but no easy in JLC stock way found.
 
-###Crystal
+### Crystal
 XXFEELNANF-14.7456M & 16pF.  Divide by 8 to get 1.843200Mhz and use 115,200 comms
 
  
-##Radio
+## Radio
 SX1278 (137-525MHz) on the DRF1278F module - http://www.dorji.com/products-detail.php?ProId=14
 	1.8v to 3.6v, < 1uA standby
 
@@ -80,7 +80,7 @@ HopeRF 95/96/97/98W
 RFM95W - 868Mhz, RFM96W/98W - 433\470MHz
 
 
-#IDE
+# IDE
 Move away from Arduinio V1?
 
 Mightcore for ATMega1284p - https://github.com/MCUdude/MightyCore
@@ -89,27 +89,44 @@ Arduino V2 - https://www.arduino.cc/en/Tutorial/getting-started-with-ide-v2
 Visual Micro - Arduino for Visual Studio - https://www.visualmicro.com/
 PlatformIO IDE - Arduino and Visual Studio Code - https://platformio.org/
 
+## Arduino V2
 
-#Others Projects
+Too add the AVR Dragon programmer, add the below to:
+
+C:\Users\WALTONK\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\2.1.2\programmers.txt
+
+dragon_jtag.name=Dragon JTAG (KW)
+dragon_jtag.communication=usb
+dragon_jtag.protocol=dragon_jtag
+dragon_jtag.program.protocol=dragon_jtag
+dragon_jtag.program.tool=avrdude
+dragon_jtag.program.extra_params=-P usb
+
+
+
+# Others Projects
 UPU's original 1.8v 4Mhz - https://ava.upuaut.net/?p=383 https://ava.upuaut.net/?p=353
 
 
-#Code Research
-Dave's FlexTrack - https://github.com/daveake/FlexTrack
-	APRS via PWM to radio module, RTTY via Radiometrix MTX2, LoRa via RFM98W (sx1278, no library, direct register writes)
-	Onboard landing position prediction
-	
-Dave's FlexTrack TTGO - https://github.com/daveake/FlexTrack_TTGO
-	As above, designed for TTGP board, LoRa only
-	
+# Code Research
 Dave's flexavr - https://github.com/daveake/flexavr
 	Designed for Standalone AVR attached to a Pi Zero
 	APRS via PWM to radio module, LoRa via RFM98W (sx1278, no library, direct register writes), Some RTTY functions, but doesn't seem complete?
 
 OK1CDJ Picotracker - https://github.com/ok1cdj/Picotracker/blob/master/sw/picotracker.ino
 	RTTY via RFM22 only, but usefull power saving code.
+
+
+Dave's FlexTrack - https://github.com/daveake/FlexTrack
+	APRS via PWM to radio module, RTTY via Radiometrix MTX2 or Lora, LoRa via RFM98W (sx1278) 
+	No library, direct register writes, sprea across multiple ino's
+	Onboard landing position prediction
 	
-* RoelKroes TB Tracker -  https://github.com/RoelKroes/TBTracker
+Dave's FlexTrack TTGO - https://github.com/daveake/FlexTrack_TTGO
+	As above, designed for TTGP board, LoRa & RTTY
+
+
+*RoelKroes TB Tracker -  https://github.com/RoelKroes/TBTracker*
 	RTTY and LoRa via SX127x (or Hope RFM9x)
 	Uses RadioLib - https://github.com/jgromes/RadioLib and tinyGPS++ https://github.com/mikalhart/TinyGPSPlus
 		Radiolib supports SX126/7/8x, RFM9x and many others, supports RTTY, Morse, SSTV, Hellschreiber, LoRa and support for LoRaWAN and APRS in discussion, but complex
@@ -119,11 +136,14 @@ OK1CDJ Picotracker - https://github.com/ok1cdj/Picotracker/blob/master/sw/picotr
 Stuarts HAB2 code - https://github.com/StuartsProjects/HAB2
 	RTTY and Lora via SX126/7/8x
 	Uses Stuarts SX12XX Library https://github.com/StuartsProjects/SX12XX-LoRa
+	All in a single .ino and .h
+	Has Upload command capbility, Sleep, EEPROM config complexity
+	Looks like the one file does command mode upload and tracker functionality
 
 
 
 
-##The Things Network (TTN)
+## The Things Network (TTN)
 How about TTN upload too?
 
 https://www.thethingsnetwork.org/docs/lorawan/frequency-plans/
@@ -159,11 +179,11 @@ Needs dedicated LoraWAN reciever like:
 Or could use LoRaGateway with this:  https://github.com/bokse001/dual_chan_pkt_fwd
 
 
-##APRS
+## APRS
 Can't do airbourne in the UK or on a UK call sign, 144Mhz, licensed spectrum
 
 
-##Issue
+## Issues
 Want to do RTTY, LoRa, APRS & LoRaWAN (TTN) from the same tracker.
 LoRa HAB and RTTY are best done on 433Mhz license free, although could be done on 868Mhz
 LoRaWAN has to be done on 868Mhz license free in Europe
