@@ -12,7 +12,7 @@ Single AA or AAA cell and Solar Panel, needs 2 x MAX40200 ideal diodes to keep s
 	Will keep tracker going over night till battery runs out
 
 Single Lithium, 2.8v to 4.2v useful input range, needs Battery Protection on Lipo to limit min discharge voltage and MCP1700T to limit to 1.8v or 3.3v
-	Will likly freeze at night
+	Will likely freeze at night
 
 Single Lithium and Solar Panel, Solar Panel needs TPS61200 to stop lithium discharging through it and buck/boost voltage to max 4.2v for Lithium charging.  Lithium needs Battery Protection to limit min discharge voltage. Lithium will likley freeze at night, uncertain behaviour when Solar is trying to charge battery and power transmitter.
 
