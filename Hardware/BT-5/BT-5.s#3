@@ -16912,15 +16912,12 @@ MAX-M8Q - 2.7 to 3.6v</text>
 <text x="342.9" y="220.98" size="1.016" layer="91">Pull ups built in to UBLOX, so optional here</text>
 <text x="137.16" y="102.87" size="1.016" layer="91" align="top-center">BLM15HD102SN1D
 </text>
-<text x="223.52" y="45.72" size="1.016" layer="91" distance="60" align="top-center">PS Low to enable Power Save, High to disable
-
-4.23v out, max 18.3Mhz, Rtop 560k and Rbot 75k
-3.37v out, max 13.3Mhz, Rtop 430k and Rbot 75K
-1.83v out, max 4Mhz, Rtop 200K and Rbot 75K
-
-0.3v to 5.5v Input</text>
+<text x="223.52" y="81.28" size="1.016" layer="91" align="top-center">PS Low to enable Power Save, High to disable
+4.23v out, Rtop 560k and Rbot 75k
+3.37v out, Rtop 430k and Rbot 75K
+1.83v out, Rtop 200K and Rbot 75K</text>
 <text x="86.36" y="41.91" size="1.016" layer="91" align="center">Solar Panel Mount</text>
-<text x="223.52" y="30.48" size="1.016" layer="91" distance="60" align="top-center">VCC - Final Output
+<text x="223.52" y="41.91" size="1.016" layer="91" align="top-center">VCC - Final Output
 VSS - Input to TPS61200
 VBATT - AA/AAA Battery
 VSOLAR - Solar
@@ -16928,7 +16925,6 @@ VLITHIUM - Lithium Battery</text>
 <text x="105.41" y="184.15" size="1.016" layer="91" align="top-center">1.5v to 5.5v</text>
 <text x="95.25" y="194.31" size="1.016" layer="91">+17dBm 1.8v to 3.7v
 +20dBm 2.4v to 3.7v</text>
-<text x="335.28" y="50.8" size="1.016" layer="91" distance="60" align="top-center">4.23v / Lipo in, 3.3v out</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="292.1" y="208.28" smashed="yes">
@@ -16990,9 +16986,9 @@ VLITHIUM - Lithium Battery</text>
 <attribute name="NAME" x="306.07" y="160.528" size="1.778" layer="95" font="vector"/>
 <attribute name="VALUE" x="295.91" y="145.034" size="1.778" layer="96" font="vector"/>
 </instance>
-<instance part="X1" gate="G$1" x="266.7" y="160.02" smashed="yes" rot="MR270">
-<attribute name="VALUE" x="281.94" y="161.29" size="1.778" layer="96" rot="MR270"/>
-<attribute name="NAME" x="250.698" y="161.29" size="1.778" layer="95" rot="MR270"/>
+<instance part="X1" gate="G$1" x="266.7" y="160.02" smashed="yes" rot="R270">
+<attribute name="VALUE" x="251.46" y="161.29" size="1.778" layer="96" rot="R270"/>
+<attribute name="NAME" x="282.702" y="161.29" size="1.778" layer="95" rot="R270"/>
 </instance>
 <instance part="GND2" gate="1" x="353.06" y="160.02" smashed="yes">
 <attribute name="VALUE" x="353.06" y="159.766" size="1.778" layer="96" align="top-center"/>
@@ -17122,10 +17118,10 @@ VLITHIUM - Lithium Battery</text>
 <attribute name="NAME" x="278.003" y="61.4426" size="1.778" layer="95"/>
 <attribute name="VALUE" x="278.003" y="56.3626" size="1.778" layer="96"/>
 </instance>
-<instance part="L6" gate="G$1" x="223.52" y="76.2" smashed="yes" rot="R90">
-<attribute name="NAME" x="224.79" y="76.2" size="1.778" layer="95" font="vector" rot="R180"/>
-<attribute name="VALUE" x="238.76" y="77.47" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
-<attribute name="LCSC_PART" x="223.52" y="76.2" size="1.778" layer="96" rot="R90" display="off"/>
+<instance part="L6" gate="G$1" x="223.52" y="83.82" smashed="yes" rot="R90">
+<attribute name="NAME" x="224.79" y="83.82" size="1.778" layer="95" font="vector" rot="R180"/>
+<attribute name="VALUE" x="238.76" y="85.09" size="1.778" layer="96" font="vector" rot="R180" align="top-left"/>
+<attribute name="LCSC_PART" x="223.52" y="83.82" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
 <instance part="U3" gate="A" x="127" y="172.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="111.4044" y="163.6014" size="2.0828" layer="95" ratio="6" rot="SR180"/>
@@ -17245,9 +17241,9 @@ VLITHIUM - Lithium Battery</text>
 <attribute name="NAME" x="87.63" y="231.14" size="1.27" layer="95" ratio="10" rot="R270"/>
 <attribute name="VALUE" x="83.82" y="231.14" size="1.27" layer="96" ratio="10" rot="R270"/>
 </instance>
-<instance part="B3" gate="G$1" x="222.25" y="83.82" smashed="yes" rot="R180">
-<attribute name="NAME" x="223.52" y="82.55" size="1.27" layer="95" ratio="10" rot="R180"/>
-<attribute name="VALUE" x="229.87" y="86.36" size="1.27" layer="96" ratio="10" rot="R180"/>
+<instance part="B3" gate="G$1" x="222.25" y="91.44" smashed="yes" rot="R180">
+<attribute name="NAME" x="223.52" y="90.17" size="1.27" layer="95" ratio="10" rot="R180"/>
+<attribute name="VALUE" x="229.87" y="93.98" size="1.27" layer="96" ratio="10" rot="R180"/>
 </instance>
 <instance part="J" gate="G$1" x="195.58" y="74.93" smashed="yes" rot="R90">
 <attribute name="NAME" x="194.31" y="73.66" size="1.27" layer="95" ratio="10" rot="R90"/>
@@ -17352,13 +17348,13 @@ VLITHIUM - Lithium Battery</text>
 <net name="GND" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="1"/>
-<wire x1="276.86" y1="152.4" x2="276.86" y2="142.24" width="0.1524" layer="91"/>
-<label x="276.86" y="137.16" size="1.778" layer="95" rot="R90"/>
+<wire x1="256.54" y1="152.4" x2="256.54" y2="142.24" width="0.1524" layer="91"/>
+<label x="256.54" y="137.16" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="X1" gate="G$1" pin="10"/>
-<wire x1="254" y1="152.4" x2="254" y2="147.32" width="0.1524" layer="91"/>
-<label x="254" y="142.24" size="1.778" layer="95" rot="R90"/>
+<wire x1="279.4" y1="152.4" x2="279.4" y2="147.32" width="0.1524" layer="91"/>
+<label x="279.4" y="142.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="6"/>
@@ -17700,8 +17696,8 @@ VLITHIUM - Lithium Battery</text>
 <net name="RST" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="2"/>
-<wire x1="274.32" y1="152.4" x2="274.32" y2="147.32" width="0.1524" layer="91"/>
-<label x="274.32" y="142.24" size="1.778" layer="95" rot="R90"/>
+<wire x1="259.08" y1="152.4" x2="259.08" y2="147.32" width="0.1524" layer="91"/>
+<label x="259.08" y="142.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="5"/>
@@ -17723,8 +17719,8 @@ VLITHIUM - Lithium Battery</text>
 <net name="SCK" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="3"/>
-<wire x1="271.78" y1="152.4" x2="271.78" y2="142.24" width="0.1524" layer="91"/>
-<label x="271.78" y="137.16" size="1.778" layer="95" rot="R90"/>
+<wire x1="261.62" y1="152.4" x2="261.62" y2="142.24" width="0.1524" layer="91"/>
+<label x="261.62" y="137.16" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="3"/>
@@ -17750,8 +17746,8 @@ VLITHIUM - Lithium Battery</text>
 <net name="MISO" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="4"/>
-<wire x1="269.24" y1="152.4" x2="269.24" y2="147.32" width="0.1524" layer="91"/>
-<label x="269.24" y="142.24" size="1.778" layer="95" rot="R90"/>
+<wire x1="264.16" y1="152.4" x2="264.16" y2="147.32" width="0.1524" layer="91"/>
+<label x="264.16" y="142.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="1"/>
@@ -17804,8 +17800,8 @@ VLITHIUM - Lithium Battery</text>
 <net name="DBG_RX" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="7"/>
-<wire x1="261.62" y1="152.4" x2="261.62" y2="142.24" width="0.1524" layer="91"/>
-<label x="261.62" y="137.16" size="1.778" layer="95" rot="R90"/>
+<wire x1="271.78" y1="152.4" x2="271.78" y2="142.24" width="0.1524" layer="91"/>
+<label x="271.78" y="137.16" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PD0(PCINT24/RXD0/T3*)"/>
@@ -17816,8 +17812,8 @@ VLITHIUM - Lithium Battery</text>
 <net name="DBG_TX" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="8"/>
-<wire x1="259.08" y1="152.4" x2="259.08" y2="147.32" width="0.1524" layer="91"/>
-<label x="259.08" y="142.24" size="1.778" layer="95" rot="R90"/>
+<wire x1="274.32" y1="152.4" x2="274.32" y2="147.32" width="0.1524" layer="91"/>
+<label x="274.32" y="142.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="U1" gate="G$1" pin="PD1(PCINT25/TXD0)"/>
@@ -17828,8 +17824,8 @@ VLITHIUM - Lithium Battery</text>
 <net name="VCC" class="0">
 <segment>
 <pinref part="X1" gate="G$1" pin="6"/>
-<wire x1="264.16" y1="152.4" x2="264.16" y2="147.32" width="0.1524" layer="91"/>
-<label x="264.16" y="142.24" size="1.778" layer="95" rot="R90"/>
+<wire x1="269.24" y1="152.4" x2="269.24" y2="147.32" width="0.1524" layer="91"/>
+<label x="269.24" y="142.24" size="1.778" layer="95" rot="R90"/>
 </segment>
 <segment>
 <pinref part="J2" gate="G$1" pin="2"/>
@@ -18315,8 +18311,8 @@ VLITHIUM - Lithium Battery</text>
 <segment>
 <pinref part="U2" gate="G$1" pin="L"/>
 <wire x1="241.3" y1="71.12" x2="246.38" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="71.12" x2="246.38" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="246.38" y1="76.2" x2="228.6" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="71.12" x2="246.38" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="246.38" y1="83.82" x2="228.6" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="L6" gate="G$1" pin="2"/>
 </segment>
 </net>
@@ -18416,8 +18412,7 @@ VLITHIUM - Lithium Battery</text>
 <wire x1="185.42" y1="83.82" x2="185.42" y2="69.85" width="0.1524" layer="91"/>
 <junction x="185.42" y="83.82"/>
 <pinref part="L6" gate="G$1" pin="1"/>
-<wire x1="218.44" y1="76.2" x2="200.66" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="200.66" y1="76.2" x2="200.66" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="83.82" x2="200.66" y2="83.82" width="0.1524" layer="91"/>
 <junction x="200.66" y="83.82"/>
 <wire x1="185.42" y1="83.82" x2="160.02" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="160.02" y1="83.82" x2="137.16" y2="83.82" width="0.1524" layer="91"/>
@@ -18429,7 +18424,8 @@ VLITHIUM - Lithium Battery</text>
 <junction x="137.16" y="83.82"/>
 <label x="170.18" y="85.09" size="1.778" layer="95"/>
 <pinref part="B3" gate="G$1" pin="2"/>
-<wire x1="218.44" y1="83.82" x2="200.66" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="91.44" x2="200.66" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="200.66" y1="91.44" x2="200.66" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="J" gate="G$1" pin="2"/>
 <wire x1="195.58" y1="83.82" x2="195.58" y2="78.74" width="0.1524" layer="91"/>
 <junction x="195.58" y="83.82"/>
@@ -18444,8 +18440,8 @@ VLITHIUM - Lithium Battery</text>
 </segment>
 <segment>
 <pinref part="X1" gate="G$1" pin="9"/>
-<wire x1="256.54" y1="152.4" x2="256.54" y2="142.24" width="0.1524" layer="91"/>
-<label x="256.54" y="137.16" size="1.778" layer="95" rot="R90"/>
+<wire x1="276.86" y1="152.4" x2="276.86" y2="142.24" width="0.1524" layer="91"/>
+<label x="276.86" y="137.16" size="1.778" layer="95" rot="R90"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -18514,8 +18510,8 @@ VLITHIUM - Lithium Battery</text>
 <wire x1="276.86" y1="68.58" x2="276.86" y2="63.5" width="0.1524" layer="91"/>
 <junction x="276.86" y="68.58"/>
 <pinref part="B3" gate="G$1" pin="1"/>
-<wire x1="226.06" y1="83.82" x2="251.46" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="251.46" y1="83.82" x2="251.46" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="226.06" y1="91.44" x2="251.46" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="251.46" y1="91.44" x2="251.46" y2="68.58" width="0.1524" layer="91"/>
 <junction x="251.46" y="68.58"/>
 <label x="294.64" y="66.04" size="1.778" layer="95"/>
 <pinref part="U9" gate="G$0" pin="VIN"/>

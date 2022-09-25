@@ -4,17 +4,17 @@ Light weight long run time cheap tracker
 # Hardware
 
 ## Power
-Single AA or AAA cell, 0.8v to 1.6v input range - TPS61200 to boost to 1.8 or 3.3v
+Single AA or AAA cell, 0.8v to 1.6v input range - TPS61200 to boost to 1.8, 3.3, 4.2 or 5v
 
 Solar Panel, 0.5v to 4.2v input range - either connect direct or use TPS61200 to boost or limit or MCP1700T to limit to 1.8 or 3.3v
 
 Single AA or AAA cell and Solar Panel, needs 2 x MAX40200 ideal diodes to keep supplies separate and TPS61200 to boost or limit to 1.8v or 3.3v
 	Primary cells will keep tracker going over night till battery runs out
 
-Single Lithium, 2.8v to 4.2v useful range, needs Battery Protection on Lipo to limit min discharge voltage and MCP1700T to limit to 1.8 or 3.3v
+Single Lithium, 2.8v to 4.2v useful range, needs Battery Protection on Lipo to limit min discharge voltage and MCP1700T to limit to 1.8v or 3.3v
 	Will likely freeze at night
 
-Single Lithium and Solar Panel, Solar Panel needs TPS61200 to stop lithium discharging through it and buck/boost voltage to max 4.2v for Lithium charging.  Lithium needs Battery Protection to limit min discharge voltage and MCP1700T to limit to 1.8 or 3.3v. Lithium will likely freeze at night.
+Single Lithium and Solar Panel, Solar Panel needs TPS61200 to stop lithium discharging through it and buck/boost voltage to max 4.2v for Lithium charging.  Lithium needs Battery Protection to limit min discharge voltage. Lithium will likely freeze at night.
 
 
 ### Boost Converter
@@ -36,12 +36,9 @@ Measure Battery, Solar and Lithium voltages
 
  
 ## GPS Module
-Ublox Max 6G 1.75v to 2.0v
-Ublox Max 7C / M8C 1.65v to 3.6v
-Ublox Max M8Q 2.7v to 3.6v
-
-ATGM336N 2.7v to 3.6v.
-Quectel L70 2.8v to 4.3v
+Ublox Max M8C / M7C to get 1.8v operation and power saving.
+ATGM336N cheap, but needs 3v plus.
+Quectel L70 cheap and great performance, but only 3.3v
 
 Connected I2C, PPS, Battery Backup, etc
 Battery backup via resistor, capacitor and diode
