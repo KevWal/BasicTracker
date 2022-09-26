@@ -73,13 +73,14 @@ XXFEELNANF-14.7456M & 16pF.  Divide by 8 to get 1.843200Mhz and use 115,200 comm
 
  
 ## Radio
-SX1278 (137-525MHz) on the DRF1278F module - http://www.dorji.com/products-detail.php?ProId=14
+SX1278 (137-525MHz) on the DORJI DRF1278F module - http://www.dorji.com/products-detail.php?ProId=14
 	1.8v to 3.6v, < 1uA standby
 
 or
 
-HopeRF 95/96/97/98W
-RFM95W - 868Mhz, RFM96W/98W - 433\470MHz
+Hope RF RFM98W - 433MHz band
+https://www.hoperf.com/modules/lora/RFM98.html
+	1.8v to 3.7v, < 1uA standby
 
 
 # IDE
@@ -108,7 +109,7 @@ dragon_jtag.program.extra_params=-P usb
 
 # Others Projects
 UPU's original 1.8v 4Mhz - https://ava.upuaut.net/?p=383 https://ava.upuaut.net/?p=353
-
+	RFM22B
 
 # Code Research
 Dave's flexavr - https://github.com/daveake/flexavr
@@ -116,16 +117,16 @@ Dave's flexavr - https://github.com/daveake/flexavr
 	APRS via PWM to radio module, LoRa via RFM98W (sx1278, no library, direct register writes), Some RTTY functions, but doesn't seem complete?
 
 OK1CDJ Picotracker - https://github.com/ok1cdj/Picotracker/blob/master/sw/picotracker.ino
-	RTTY via RFM22 only, but usefull power saving code.
+	RTTY via RFM22 only, but useful power saving code.
 
 
 Dave's FlexTrack - https://github.com/daveake/FlexTrack
 	APRS via PWM to radio module, RTTY via Radiometrix MTX2 or Lora, LoRa via RFM98W (sx1278) 
-	No library, direct register writes, sprea across multiple ino's
+	No library, direct register writes, spread across multiple ino's
 	Onboard landing position prediction
 	
 Dave's FlexTrack TTGO - https://github.com/daveake/FlexTrack_TTGO
-	As above, designed for TTGP board, LoRa & RTTY
+	As above, designed for TTGO board, LoRa & RTTY
 
 
 *RoelKroes TB Tracker -  https://github.com/RoelKroes/TBTracker*
@@ -139,7 +140,7 @@ Stuarts HAB2 code - https://github.com/StuartsProjects/HAB2
 	RTTY and Lora via SX126/7/8x
 	Uses Stuarts SX12XX Library https://github.com/StuartsProjects/SX12XX-LoRa
 	All in a single .ino and .h
-	Has Upload command capbility, Sleep, EEPROM config complexity
+	Has Upload command capability, Sleep, EEPROM config complexity
 	Looks like the one file does command mode upload and tracker functionality
 
 
