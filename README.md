@@ -52,10 +52,13 @@ Antenna Options - Chip, Wire, static leak resister option
 
 ### GPS Filtering
 *MuRata_BLM15HD102SN1D_1kR-25-at100MHz-250mA_C21516*
+
+### GPS Antenna
+1/4 wave wire = 45.2mm (1575Mhz) (1/4 wave generally better than chip antenna IMO)
  
  
 ## Processor
-ATMega1284 - In stock in JLC, 10mmx10mm, 128kb of storage, 16kb of ram
+ATMega1284p - In stock in JLC, 10mmx10mm, 128kb of storage, 16kb of ram
 	Step up from 328 but still same family
 	JTAG interface not one wire debug.
 	Info on using the 1284 - https://prominimicros.com/
@@ -70,6 +73,15 @@ Ideally would get a USB Interface, but no easy in JLC stock way found.
 
 ### Crystal
 XXFEELNANF-14.7456M & 16pF.  Divide by 8 to get 1.843200Mhz and use 115,200 comms
+
+
+## Fuses
+Extended = 0xFF
+High = 0x16
+Low = 0x7F
+
+Arduino
+	Clock External 14.7456 (even though clk/8 fuse set)?
 
  
 ## Radio
@@ -93,7 +105,6 @@ Visual Micro - Arduino for Visual Studio - https://www.visualmicro.com/
 PlatformIO IDE - Arduino and Visual Studio Code - https://platformio.org/
 
 ## Arduino V2
-
 Too add the AVR Dragon programmer, add the below to:
 
 C:\Users\WALTONK\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\2.1.2\programmers.txt
@@ -105,7 +116,11 @@ dragon_jtag.program.protocol=dragon_jtag
 dragon_jtag.program.tool=avrdude
 dragon_jtag.program.extra_params=-P usb
 
-
+## Microchip Studio
+Good Device Programming interface for fuses
+Works with:
+	Pololu USB AVR (STK500) - can supply / program at 3.3 or 5v; and
+	AVR Dragon - can supply 5v, can program down to 1.8v
 
 # Others Projects
 UPU's original 1.8v 4Mhz - https://ava.upuaut.net/?p=383 https://ava.upuaut.net/?p=353
@@ -194,4 +209,19 @@ APRS is on 144Mhz
 
 HopeRF modules dont seem to have lower and upper band outputs connected to aerial?
 RadioLib doesn't do APRS or LoRaWAN
+
+## LoRa Modes
+
+### From lora-gateway code:
+Num; ImplicitOrExplicit; ErrorCoding; Bandwidth; SpreadingFactor; LowDataRateOptimize; BaudRate; Description
+0: EXPLICIT_MODE, ERROR_CODING_4_8, BANDWIDTH_20K8, SPREADING_11, 1,    60, Telemetry - Normal mode for telemetry
+1: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_6,  0,  1400, SSDV - Normal mode for SSDV
+2: EXPLICIT_MODE, ERROR_CODING_4_8, BANDWIDTH_62K5, SPREADING_8,  0,  2000, Repeater - Normal mode for repeater network	
+3: EXPLICIT_MODE, ERROR_CODING_4_6, BANDWIDTH_250K, SPREADING_7,  0,  8000, Turbo - Normal mode for high speed images in 868MHz band
+4: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_250K, SPREADING_6,  0, 16828, TurboX - Fastest mode within IR2030 in 868MHz band
+5: EXPLICIT_MODE, ERROR_CODING_4_8, BANDWIDTH_41K7, SPREADING_11, 0,   200, Calling - Calling mode
+6: EXPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_7,  0,  2800, Uplink - Uplink explicit mode (variable length)
+7: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_41K7, SPREADING_6,  0,  2800, Uplink - Uplink mode for 868
+8: EXPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_7,  0,   910, Telnet - Telnet-style comms with HAB on 434
+9: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_62K5, SPREADING_6,  0,  4500, SSDV Repeater - Fast (SSDV) repeater network
 

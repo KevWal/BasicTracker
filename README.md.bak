@@ -4,17 +4,17 @@ Light weight long run time cheap tracker
 # Hardware
 
 ## Power
-Single AA or AAA cell, 0.8v to 1.6v input range - TPS61200 to boost to 1.8, 3.3, 4.2 or 5v
+Single AA or AAA cell, 0.8v to 1.6v input range - TPS61200 to boost to 1.8 or 3.3v
 
 Solar Panel, 0.5v to 4.2v input range - either connect direct or use TPS61200 to boost or limit or MCP1700T to limit to 1.8 or 3.3v
 
 Single AA or AAA cell and Solar Panel, needs 2 x MAX40200 ideal diodes to keep supplies separate and TPS61200 to boost or limit to 1.8v or 3.3v
 	Primary cells will keep tracker going over night till battery runs out
 
-Single Lithium, 2.8v to 4.2v useful range, needs Battery Protection on Lipo to limit min discharge voltage and MCP1700T to limit to 1.8v or 3.3v
+Single Lithium, 2.8v to 4.2v useful range, needs Battery Protection on Lipo to limit min discharge voltage and MCP1700T to limit to 1.8 or 3.3v
 	Will likely freeze at night
 
-Single Lithium and Solar Panel, Solar Panel needs TPS61200 to stop lithium discharging through it and buck/boost voltage to max 4.2v for Lithium charging.  Lithium needs Battery Protection to limit min discharge voltage. Lithium will likely freeze at night.
+Single Lithium and Solar Panel, Solar Panel needs TPS61200 to stop lithium discharging through it and buck/boost voltage to max 4.2v for Lithium charging.  Lithium needs Battery Protection to limit min discharge voltage and MCP1700T to limit to 1.8 or 3.3v. Lithium will likely freeze at night.
 
 
 ### Boost Converter
@@ -36,9 +36,12 @@ Measure Battery, Solar and Lithium voltages
 
  
 ## GPS Module
-Ublox Max M8C / M7C to get 1.8v operation and power saving.
-ATGM336N cheap, but needs 3v plus.
-Quectel L70 cheap and great performance, but only 3.3v
+Ublox Max 6G 1.75v to 2.0v
+Ublox Max 7C / M8C 1.65v to 3.6v
+Ublox Max M8Q 2.7v to 3.6v
+
+ATGM336N 2.7v to 3.6v.
+Quectel L70 2.8v to 4.3v
 
 Connected I2C, PPS, Battery Backup, etc
 Battery backup via resistor, capacitor and diode
@@ -52,7 +55,7 @@ Antenna Options - Chip, Wire, static leak resister option
  
  
 ## Processor
-ATMega1284 - In stock in JLC, 10mmx10mm, 128kb of storage, 16kb of ram
+ATMega1284p - In stock in JLC, 10mmx10mm, 128kb of storage, 16kb of ram
 	Step up from 328 but still same family
 	JTAG interface not one wire debug.
 	Info on using the 1284 - https://prominimicros.com/
@@ -68,15 +71,25 @@ Ideally would get a USB Interface, but no easy in JLC stock way found.
 ### Crystal
 XXFEELNANF-14.7456M & 16pF.  Divide by 8 to get 1.843200Mhz and use 115,200 comms
 
+
+## Fuses
+Extended = 0xFF
+High = 0x16
+Low = 0x7F
+
+Arduino
+	Clock External 14.7456 (even though clk/8 fuse set)?
+
  
 ## Radio
-SX1278 (137-525MHz) on the DRF1278F module - http://www.dorji.com/products-detail.php?ProId=14
+SX1278 (137-525MHz) on the DORJI DRF1278F module - http://www.dorji.com/products-detail.php?ProId=14
 	1.8v to 3.6v, < 1uA standby
 
 or
 
-HopeRF 95/96/97/98W
-RFM95W - 868Mhz, RFM96W/98W - 433\470MHz
+Hope RF RFM98W - 433MHz band
+https://www.hoperf.com/modules/lora/RFM98.html
+	1.8v to 3.7v, < 1uA standby
 
 
 # IDE
@@ -89,7 +102,6 @@ Visual Micro - Arduino for Visual Studio - https://www.visualmicro.com/
 PlatformIO IDE - Arduino and Visual Studio Code - https://platformio.org/
 
 ## Arduino V2
-
 Too add the AVR Dragon programmer, add the below to:
 
 C:\Users\WALTONK\AppData\Local\Arduino15\packages\MightyCore\hardware\avr\2.1.2\programmers.txt
@@ -101,11 +113,15 @@ dragon_jtag.program.protocol=dragon_jtag
 dragon_jtag.program.tool=avrdude
 dragon_jtag.program.extra_params=-P usb
 
-
+## Microchip Studio
+Good Device Programming interface for fuses
+Works with:
+	Pololu USB AVR (STK500) - can supply / program at 3.3 or 5v; and
+	AVR Dragon - can supply 5v, can program down to 1.8v
 
 # Others Projects
 UPU's original 1.8v 4Mhz - https://ava.upuaut.net/?p=383 https://ava.upuaut.net/?p=353
-
+	RFM22B
 
 # Code Research
 Dave's flexavr - https://github.com/daveake/flexavr
@@ -113,16 +129,16 @@ Dave's flexavr - https://github.com/daveake/flexavr
 	APRS via PWM to radio module, LoRa via RFM98W (sx1278, no library, direct register writes), Some RTTY functions, but doesn't seem complete?
 
 OK1CDJ Picotracker - https://github.com/ok1cdj/Picotracker/blob/master/sw/picotracker.ino
-	RTTY via RFM22 only, but usefull power saving code.
+	RTTY via RFM22 only, but useful power saving code.
 
 
 Dave's FlexTrack - https://github.com/daveake/FlexTrack
 	APRS via PWM to radio module, RTTY via Radiometrix MTX2 or Lora, LoRa via RFM98W (sx1278) 
-	No library, direct register writes, sprea across multiple ino's
+	No library, direct register writes, spread across multiple ino's
 	Onboard landing position prediction
 	
 Dave's FlexTrack TTGO - https://github.com/daveake/FlexTrack_TTGO
-	As above, designed for TTGP board, LoRa & RTTY
+	As above, designed for TTGO board, LoRa & RTTY
 
 
 *RoelKroes TB Tracker -  https://github.com/RoelKroes/TBTracker*
@@ -136,7 +152,7 @@ Stuarts HAB2 code - https://github.com/StuartsProjects/HAB2
 	RTTY and Lora via SX126/7/8x
 	Uses Stuarts SX12XX Library https://github.com/StuartsProjects/SX12XX-LoRa
 	All in a single .ino and .h
-	Has Upload command capbility, Sleep, EEPROM config complexity
+	Has Upload command capability, Sleep, EEPROM config complexity
 	Looks like the one file does command mode upload and tracker functionality
 
 
@@ -190,4 +206,19 @@ APRS is on 144Mhz
 
 HopeRF modules dont seem to have lower and upper band outputs connected to aerial?
 RadioLib doesn't do APRS or LoRaWAN
+
+## LoRa Modes
+
+### From lora-gateway code:
+Num; ImplicitOrExplicit; ErrorCoding; Bandwidth; SpreadingFactor; LowDataRateOptimize; BaudRate; Description
+0: EXPLICIT_MODE, ERROR_CODING_4_8, BANDWIDTH_20K8, SPREADING_11, 1,    60, Telemetry - Normal mode for telemetry
+1: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_6,  0,  1400, SSDV - Normal mode for SSDV
+2: EXPLICIT_MODE, ERROR_CODING_4_8, BANDWIDTH_62K5, SPREADING_8,  0,  2000, Repeater - Normal mode for repeater network	
+3: EXPLICIT_MODE, ERROR_CODING_4_6, BANDWIDTH_250K, SPREADING_7,  0,  8000, Turbo - Normal mode for high speed images in 868MHz band
+4: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_250K, SPREADING_6,  0, 16828, TurboX - Fastest mode within IR2030 in 868MHz band
+5: EXPLICIT_MODE, ERROR_CODING_4_8, BANDWIDTH_41K7, SPREADING_11, 0,   200, Calling - Calling mode
+6: EXPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_7,  0,  2800, Uplink - Uplink explicit mode (variable length)
+7: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_41K7, SPREADING_6,  0,  2800, Uplink - Uplink mode for 868
+8: EXPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_7,  0,   910, Telnet - Telnet-style comms with HAB on 434
+9: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_62K5, SPREADING_6,  0,  4500, SSDV Repeater - Fast (SSDV) repeater network
 
