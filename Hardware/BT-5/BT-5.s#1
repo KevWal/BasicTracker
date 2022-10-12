@@ -16928,6 +16928,7 @@ VLITHIUM - Lithium Battery</text>
 <text x="105.41" y="184.15" size="1.016" layer="91" align="top-center">1.5v to 5.5v</text>
 <text x="95.25" y="194.31" size="1.016" layer="91">+17dBm 1.8v to 3.7v
 +20dBm 2.4v to 3.7v</text>
+<text x="335.28" y="50.8" size="1.016" layer="91" distance="60" align="top-center">4.23v / Lipo in, 3.3v out</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="292.1" y="208.28" smashed="yes">

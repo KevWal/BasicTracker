@@ -9,6 +9,7 @@
 #include "Misc.h"
 #include "ADC.h"
 #include "TBTracker.h"
+#include "Radio.h"
 
 #include <EEPROM.h>
 
@@ -39,36 +40,39 @@
 *     
 * The LoRa payload looks the same, except for the callsign (if you changed that).     
 ************************************************************************************/
-//===============================================================================
-void CreateTXLine(const char *PayloadID, unsigned long aCounter, const char *aPrefix)
+void createLoRaTXLine(const char *PayloadID, unsigned long aCounter, const char *aPrefix)
 {
    int Count, i, j;
    unsigned int CRC;
    char LatitudeString[16], LongitudeString[16];
    char InternalTemp[10];
+   char VccVoltage[10];
    char BattVoltage[10];
-   char ExtVoltage[10];
 
 #ifdef ATMEGA1284P // ATMEGA1284P does not have an internal temperature sensor
-  dtostrf(0.0, 3, 1, InternalTemp);
+  dtostrf(getRadioTemp(), 3, 1, InternalTemp);
 #else // Get the internal chip temperature
-  dtostrf(ReadTemp(), 3, 1, InternalTemp);
-  DBGPRNTST(F("InternalTemp: ")); DBGPRNTLN(InternalTemp);
+  dtostrf(readTemp(), 3, 1, InternalTemp);
 #endif
+  DBGPRNTST(F("InternalTemp: ")); DBGPRNTLN(InternalTemp);
 
   // Get the battery voltage
-  dtostrf(ReadVCC(), 4, 2, BattVoltage);
-  DBGPRNTST(F("BattVoltage: ")); DBGPRNTLN(BattVoltage);
+  dtostrf(readVCC(), 4, 2, VccVoltage);
+  DBGPRNTST(F("VccVoltage: ")); DBGPRNTLN(VccVoltage);
 
   // Get the external voltage
-  dtostrf(ReadExternalVoltage(), 4, 2, ExtVoltage);
-  DBGPRNTST(F("ExtVoltage: ")); DBGPRNTLN(ExtVoltage);
+  dtostrf(readExternalVoltage(), 4, 2, BattVoltage);
+  DBGPRNTST(F("BattVoltage: ")); DBGPRNTLN(BattVoltage);
          
   dtostrf(UGPS.Latitude, 7, 5, LatitudeString);
   dtostrf(UGPS.Longitude, 7, 5, LongitudeString);   
    
   sprintf(Sentence,
+#if defined(USE_FIELDSTR)
+            "%s%s,%ld,%02d:%02d:%02d,%s,%s,%ld,%u,%s,%s,%s,%s",
+#else
             "%s%s,%ld,%02d:%02d:%02d,%s,%s,%ld,%u,%s,%s,%s",
+#endif
             aPrefix,
             PayloadID,
             aCounter,
@@ -78,8 +82,85 @@ void CreateTXLine(const char *PayloadID, unsigned long aCounter, const char *aPr
             UGPS.Altitude,
             UGPS.Satellites,
             InternalTemp,
-            BattVoltage,
-            ExtVoltage);
+            VccVoltage,
+            BattVoltage
+#if defined(USE_FIELDSTR)            
+            ,
+			      FIELDSTR
+#endif
+  );
+
+  Count = strlen(Sentence);
+
+  // Calc UKHAS CRC
+  CRC = 0xffff;           // Seed
+   
+  for (i = strlen(aPrefix); i < Count; i++)
+  {   // For speed, repeat calculation instead of looping for each bit
+    CRC ^= (((unsigned int)Sentence[i]) << 8);
+    for (j=0; j<8; j++)
+    {
+      if (CRC & 0x8000)
+        CRC = (CRC << 1) ^ 0x1021;
+      else
+        CRC <<= 1;
+    }
+  }
+
+  Sentence[Count++] = '*'; // Count++ accesses Sentence[Count] and then increments Count
+  Sentence[Count++] = hexConvert((CRC >> 12) & 15);
+  Sentence[Count++] = hexConvert((CRC >> 8) & 15);
+  Sentence[Count++] = hexConvert((CRC >> 4) & 15);
+  Sentence[Count++] = hexConvert(CRC & 15);
+  Sentence[Count++] = '\n';
+  Sentence[Count++] = '\0';
+
+  DBGPRNTST(F("TX Line: ")); DBGPRNT(Sentence);
+
+//#ifndef LORA_EXPLICITMODE
+  // In Implicit mode we dont Tx a LoRa header, lora-gateway then expects a 255 byte string
+//  DBGPRNTST(F("Implicit mode - Start Count = ")); DBGPRNT(Count); DBGPRNT(" ");
+
+  // Overwrite the \n \0
+  //Sentence[Count - 2] = ' ';
+  //Sentence[Count - 1] = ' ';
+
+//  for (;Count < 255 - 1;) // 254
+//  {
+//    Sentence[Count++] = ' '; // Over write /0 on first iteration
+    //DBGPRNT(">");
+//  }
+
+//  Sentence[Count++] = '\n';
+//  Sentence[Count] = '\0';
+
+//  DBGPRNT(" End Count = "); DBGPRNT(Count); DBGPRNTLN(".");
+//#endif
+
+  
+}
+
+
+void createRTTYTXLine(const char *PayloadID, unsigned long aCounter, const char *aPrefix)
+{
+   int Count, i, j;
+   unsigned int CRC;
+   char LatitudeString[16], LongitudeString[16];
+
+  dtostrf(UGPS.Latitude, 7, 5, LatitudeString);
+  dtostrf(UGPS.Longitude, 7, 5, LongitudeString);   
+   
+  sprintf(Sentence,
+            "%s%s,%ld,%02d:%02d:%02d,%s,%s,%ld,%u",
+            aPrefix,
+            PayloadID,
+            aCounter,
+            UGPS.Hours, UGPS.Minutes, UGPS.Seconds,   
+            LatitudeString,
+            LongitudeString,
+            UGPS.Altitude,
+            UGPS.Satellites
+  );
 
   Count = strlen(Sentence);
 
@@ -99,18 +180,19 @@ void CreateTXLine(const char *PayloadID, unsigned long aCounter, const char *aPr
   }
 
   Sentence[Count++] = '*';
-  Sentence[Count++] = Hex((CRC >> 12) & 15);
-  Sentence[Count++] = Hex((CRC >> 8) & 15);
-  Sentence[Count++] = Hex((CRC >> 4) & 15);
-  Sentence[Count++] = Hex(CRC & 15);
+  Sentence[Count++] = hexConvert((CRC >> 12) & 15);
+  Sentence[Count++] = hexConvert((CRC >> 8) & 15);
+  Sentence[Count++] = hexConvert((CRC >> 4) & 15);
+  Sentence[Count++] = hexConvert(CRC & 15);
   Sentence[Count++] = '\n';  
   Sentence[Count++] = '\0';
 
   DBGPRNTST(F("TX Line: ")); DBGPRNT(Sentence);
 }
 
+
 //===============================================================================
-char Hex(char Character)
+char hexConvert(char Character)
 {
   char HexTable[] = "0123456789ABCDEF";
   

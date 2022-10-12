@@ -16805,7 +16805,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="R2" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="120KR"/>
 <part name="R3" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="33KR"/>
 <part name="GND3" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
-<part name="R4" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="330R"/>
+<part name="R4" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="180R"/>
 <part name="D1" library="SparkFun-LED" library_urn="urn:adsk.eagle:library:529" deviceset="LED" device="0603" package3d_urn="urn:adsk.eagle:package:39354/1"/>
 <part name="U$2" library="GPS Antenna RainSun GPS1003-1575" deviceset="ANTENNA" device=""/>
 <part name="U$3" library="KEW_HF_V16" deviceset="AVA_UBLOX_MAX-6" device=""/>
@@ -16823,7 +16823,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND8" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="R5" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="330R"/>
 <part name="C11" library="Capacitor" library_urn="urn:adsk.eagle:library:16290819" deviceset="C-POL" device="ECAP-10.5MM" package3d_urn="urn:adsk.eagle:package:16290882/1" technology="_"/>
-<part name="C9" library="KEW_HF_V16" deviceset="RCL_CPOL-EU" device="SMCC" value="220uF"/>
+<part name="C9" library="KEW_HF_V16" deviceset="RCL_CPOL-EU" device="SMCC" value="330uF"/>
 <part name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" deviceset="DIODE-" device="SOD123" package3d_urn="urn:adsk.eagle:package:43420/1" value="B5819W">
 <attribute name="LCSC_PART" value="C8598"/>
 </part>
@@ -16929,6 +16929,10 @@ VLITHIUM - Lithium Battery</text>
 <text x="95.25" y="194.31" size="1.016" layer="91">+17dBm 1.8v to 3.7v
 +20dBm 2.4v to 3.7v</text>
 <text x="335.28" y="50.8" size="1.016" layer="91" distance="60" align="top-center">4.23v / Lipo in, 3.3v out</text>
+<text x="109.22" y="144.78" size="1.016" layer="91" align="top-center">330uF gives 1.5 
+seconds at 1.8v
+with MAX-7C
+</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="292.1" y="208.28" smashed="yes">
@@ -17072,7 +17076,7 @@ VLITHIUM - Lithium Battery</text>
 </instance>
 <instance part="C9" gate="G$1" x="114.3" y="147.32" smashed="yes" rot="R270">
 <attribute name="NAME" x="114.7826" y="146.177" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="109.7026" y="146.177" size="1.778" layer="96" rot="R270"/>
+<attribute name="VALUE" x="117.3226" y="146.177" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="D2" gate="G$1" x="124.46" y="154.94" smashed="yes" rot="R180">
 <attribute name="NAME" x="127" y="153.1874" size="1.778" layer="95" rot="R180"/>

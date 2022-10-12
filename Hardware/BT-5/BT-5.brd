@@ -2131,7 +2131,7 @@ Please make sure your boards conform to these design rules.
 <attribute name="MPN" value="RC0402JR-070RL" x="31.2674" y="17.4244" size="1.778" layer="27" display="off"/>
 <attribute name="NAME" x="30.5816" y="19.7358" size="0.8128" layer="25" font="vector" ratio="19" rot="R270"/>
 </element>
-<element name="R4" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" package="R0402" package3d_urn="urn:adsk.eagle:package:8004940/1" value="330R" x="33.655" y="14.605" smashed="yes" rot="R180">
+<element name="R4" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" package="R0402" package3d_urn="urn:adsk.eagle:package:8004940/1" value="180R" x="33.655" y="14.605" smashed="yes" rot="R180">
 <attribute name="MPN" value="RC0402JR-070RL" x="33.655" y="14.605" size="1.778" layer="27" rot="R180" display="off"/>
 <attribute name="NAME" x="33.147" y="14.986" size="0.8128" layer="25" font="vector" ratio="19" rot="R180"/>
 </element>
@@ -2184,7 +2184,7 @@ Please make sure your boards conform to these design rules.
 <attribute name="VALUE" x="13.2158" y="12.9032" size="1.27" layer="28" rot="MR90" align="top-center"/>
 <attribute name="VOLTAGE_RATING" value="" x="19.1008" y="12.9032" size="1.778" layer="28" rot="MR90" display="off"/>
 </element>
-<element name="C9" library="KEW_HF_V16" package="RCL_SMC_C" value="220uF" x="15.24" y="4.445" smashed="yes" rot="R270">
+<element name="C9" library="KEW_HF_V16" package="RCL_SMC_C" value="330uF" x="15.24" y="4.445" smashed="yes" rot="R270">
 <attribute name="NAME" x="15.4686" y="3.9878" size="0.8128" layer="25" font="vector" ratio="19"/>
 </element>
 <element name="D2" library="diode" library_urn="urn:adsk.eagle:library:210" package="SOD123" package3d_urn="urn:adsk.eagle:package:43420/1" value="B5819W" x="18.7706" y="3.3528" smashed="yes" rot="R270">

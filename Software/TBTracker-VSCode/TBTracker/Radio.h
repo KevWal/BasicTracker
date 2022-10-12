@@ -6,19 +6,21 @@
 #include "Settings.h"
 #include <Arduino.h>
 
-void SetupRTTY();
+void setupRTTY();
 
-void SetupFSK();
+void setupFSK();
 
-void SetupLoRa();
+void setupLoRa();
 
-void ResetRadio();
+void resetRadio();
 
-void SetupRadio();
+void setupRadio();
 
-void sendRTTY(String TxLine);
+void sendRTTY(const char* TxLine);
 
-void sendLoRa(String TxLine);
+void sendLoRa(const char* TxLine);
+
+int8_t getRadioTemp();
 
 //If SerialGPS is defined then we are using a Hardware serial port and dont need Software Serial
 #ifndef SERIALGPS
