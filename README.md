@@ -78,7 +78,7 @@ XXFEELNANF-14.7456M & 16pF.  Divide by 8 to get 1.843200Mhz and use 115,200 comm
 ## Fuses
 Extended = 0xFF
 High = 0x16
-Low = 0x7F
+Low = 0x7F (ck div 8 set)
 
 Arduino
 	Clock External 14.7456 (even though clk/8 fuse set)?
@@ -225,3 +225,15 @@ Num; ImplicitOrExplicit; ErrorCoding; Bandwidth; SpreadingFactor; LowDataRateOpt
 8: EXPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_20K8, SPREADING_7,  0,   910, Telnet - Telnet-style comms with HAB on 434
 9: IMPLICIT_MODE, ERROR_CODING_4_5, BANDWIDTH_62K5, SPREADING_6,  0,  4500, SSDV Repeater - Fast (SSDV) repeater network
 
+#Launch
+
+Also testing some backup trackers:
+
+RTTY - KW-BCK1 - 50 Baud, 8n2, 610Hz shift, 434.113Mhz, 1 short sentence repeated 3 times every once every 30 seconds
+
+LoRa - KW-BCK2 - Mode 5, 433.650Mhz, 1 long sentence repeated 3 times every once every 30 seconds
+	Field String of 0123456AI9, RX frequency of 433.653
+
+Horus FSK4 - G7PMO-V2 - 50 Baud, 244Hz shift, 434.200Mhz, 1 binary packet repeated 3 times every once every 30 seconds
+	RX frequency of 434.173Mhz
+	$$G7PMO-V2,428,13:25:01,52.32273,-0.70610,107,0,0,-18,3.08,40.97,-2508.2,63,3158.8*1B07
