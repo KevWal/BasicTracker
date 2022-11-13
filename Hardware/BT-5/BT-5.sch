@@ -16917,6 +16917,7 @@ MAX-M8Q - 2.7 to 3.6v</text>
 4.23v out, max 18.3Mhz, Rtop 560k and Rbot 75k
 3.63v out, max 15Mhz, Rtop 470k and Rbot 75k
 3.37v out, max 13.3Mhz, Rtop 430k and Rbot 75k
+2.7v out, max 10Mhz, Rtop 330k and Rbot 75k
 1.83v out, max 4Mhz, Rtop 200K and Rbot 75k
 
 0.3v to 5.5v Input</text>
@@ -16934,6 +16935,7 @@ VLITHIUM - Lithium Battery</text>
 seconds at 1.8v
 with MAX-7C
 </text>
+<text x="104.14" y="35.56" size="1.016" layer="91" distance="60" align="top-center">Move C21 to VSS to buffer both VSolar and VBatt, remove C11 and make C21 C11 size?</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="292.1" y="208.28" smashed="yes">
