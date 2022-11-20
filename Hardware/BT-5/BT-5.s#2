@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="yes" altdistance="0.05" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -16915,8 +16915,9 @@ MAX-M8Q - 2.7 to 3.6v</text>
 <text x="223.52" y="45.72" size="1.016" layer="91" distance="60" align="top-center">PS Low to enable Power Save, High to disable
 
 4.23v out, max 18.3Mhz, Rtop 560k and Rbot 75k
-3.37v out, max 13.3Mhz, Rtop 430k and Rbot 75K
-1.83v out, max 4Mhz, Rtop 200K and Rbot 75K
+3.63v out, max 15Mhz, Rtop 470k and Rbot 75k
+3.37v out, max 13.3Mhz, Rtop 430k and Rbot 75k
+1.83v out, max 4Mhz, Rtop 200K and Rbot 75k
 
 0.3v to 5.5v Input</text>
 <text x="86.36" y="41.91" size="1.016" layer="91" align="center">Solar Panel Mount</text>

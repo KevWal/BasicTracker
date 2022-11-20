@@ -229,13 +229,24 @@ Num; ImplicitOrExplicit; ErrorCoding; Bandwidth; SpreadingFactor; LowDataRateOpt
 
 Also testing some backup trackers:
 
-RTTY - KW-BCK1 - 50 Baud, 8n2, 610Hz shift, 434.113Mhz, 1 short sentence repeated 3 times every once every 30 seconds
-	RX Frequency 434.084Mhz
-	$$$$$KW-BCK1,1,11:27:40,52.00000,-0.70000,79,5*C065
 
-LoRa - KW-BCK2 - Mode 5, 433.650Mhz, 1 sentence repeated 3 times every once every 30 seconds
-	Field String of 0123456AI9, RX frequency of 433.653
+Hoping to do a launch on Sunday (20th, tomorrow) morning, before 9am GMT from Northamptonshire, UK of a Yokohama Balloon, carrying a custom built 'Single AA' tracker based originally on the TBTracker code base, but heavily expanded and modified.
 
-Horus FSK4 - G7PMO-V2 - 50 Baud, 244Hz shift, 434.340Mhz, 1 binary packet repeated 3 times every once every 30 seconds
-	RX frequency of 434.312Mhz
-	$$G7PMO-V2,428,13:25:01,52.00000,-0.00000,107,0,0,-18,3.08,40.97,-2508.2,63,3158.8*1B07
+Looking to A) test my ability to get a Yokohama to float, and B) the custom tracker being able to be decoded across RTTY, LoRa and Horus FSK4.  Flight path is predicted to take it across Holland, Germany & maybe Poland - but with the weather systems all over the place at the moment, who knows! :)
+
+The tracker is based on the ATmega1284 running at 1.8432Mhz, Ublox GPS and DRF1278 radio module, all with a 1.8v VCC.  About 25g with 1 x AA.
+
+Yokohama is 48.6g and was pre stretched at 0.22PSI up to about 99" circumference and filled to 6g of free lift.
+
+RTTY - KW-BCK1 - 50 Baud, 8n2, 610Hz shift, 434.113Mhz, 1 short sentence repeated 3 times every once every 2 minutes
+	RX Frequency for me was about 434.084Mhz
+
+LoRa - KW-BCK2 - Mode 5, 433.650Mhz, 1 sentence repeated 3 times every once every 2 minutes
+	Field String of 0123456AI9, RX frequency for me of 433.653
+
+Horus FSK4 - G7PMO-V2 - 100 Baud, 244Hz shift, 434.340Mhz, 1 binary packet repeated 3 times every once every 2 minutes
+	RX frequency for me was about 434.312Mhz
+	
+Weight
+
+28g + 6g free lift = 34

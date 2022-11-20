@@ -16861,7 +16861,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <attribute name="LCSC_PART" value="C124311"/>
 </part>
 <part name="L1" library="OPL_Inductor" library_urn="urn:adsk.eagle:library:8004654" deviceset="SMD-INDUCTOR-3.3NH-0.3NH-300MA(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004741/1" value="BLM15HD102SN1D"/>
-<part name="C17" library="OPL_Capacitor" library_urn="urn:adsk.eagle:library:8004261" deviceset="CERAMIC-10UF-6.3V-20%-X5R(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004285/1" value="10uf"/>
+<part name="C17" library="OPL_Capacitor" library_urn="urn:adsk.eagle:library:8004261" deviceset="CERAMIC-10UF-6.3V-20%-X5R(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004285/1" value="100KR"/>
 <part name="R11" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="15KR"/>
 <part name="R12" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="15KR"/>
 <part name="SUPPLY4" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="VCC" device=""/>
@@ -16879,7 +16879,7 @@ new: Attribute TP_SIGNAL_NAME&lt;br&gt;
 <part name="GND14" library="SparkFun-PowerSymbols" library_urn="urn:adsk.eagle:library:530" deviceset="GND" device=""/>
 <part name="U6" library="SparkFun-RF" library_urn="urn:adsk.eagle:library:531" deviceset="RFM69H" device="CW-433" package3d_urn="urn:adsk.eagle:package:39566/1" value="RFM95_96_97_98W"/>
 <part name="J$1" library="ESP32-Cam-Pico-V4" deviceset="SMA_EDGE" device=""/>
-<part name="C20" library="OPL_Capacitor" library_urn="urn:adsk.eagle:library:8004261" deviceset="CERAMIC-10UF-6.3V-20%-X5R(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004285/1" value="10uf"/>
+<part name="C20" library="OPL_Capacitor" library_urn="urn:adsk.eagle:library:8004261" deviceset="CERAMIC-10UF-6.3V-20%-X5R(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004285/1" value="100KR"/>
 <part name="B3" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="Optional 0R Bypass"/>
 <part name="J" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="0R"/>
 <part name="I" library="OPL_Resistor" library_urn="urn:adsk.eagle:library:8004883" deviceset="SMD-RES-20K-5%-1/16W(0402)" device="" package3d_urn="urn:adsk.eagle:package:8004940/1" value="NC"/>

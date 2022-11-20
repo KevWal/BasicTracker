@@ -16914,9 +16914,9 @@ MAX-M8Q - 2.7 to 3.6v</text>
 </text>
 <text x="223.52" y="45.72" size="1.016" layer="91" distance="60" align="top-center">PS Low to enable Power Save, High to disable
 
-4.23v out, Rtop 560k and Rbot 75k
-3.37v out, Rtop 430k and Rbot 75K
-1.83v out, Rtop 200K and Rbot 75K
+4.23v out, max 18.3Mhz, Rtop 560k and Rbot 75k
+3.37v out, max 13.3Mhz, Rtop 430k and Rbot 75K
+1.83v out, max 4Mhz, Rtop 200K and Rbot 75K
 
 0.3v to 5.5v Input</text>
 <text x="86.36" y="41.91" size="1.016" layer="91" align="center">Solar Panel Mount</text>
